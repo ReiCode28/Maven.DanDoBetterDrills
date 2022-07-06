@@ -8,7 +8,7 @@ public class StringUtilities {
      * @return `Hello World` as a string
      */
     public static String getHelloWorld() {
-        return null;
+        return "Hello World";
     }
 
     /**
@@ -17,7 +17,7 @@ public class StringUtilities {
      * @return the concatenation of two strings, `firstSegment`, and `secondSegment`
      */
     public static String concatenation(String firstSegment, String secondSegment){
-        return null;
+        return firstSegment + secondSegment;
     }
 
     /**
@@ -26,7 +26,7 @@ public class StringUtilities {
      * @return the concatenation of an integer, `firstSegment`, and a String, `secondSegment`
      */
     public static String concatenation(int firstSegment, String secondSegment){
-        return null;
+        return firstSegment + secondSegment;
     }
 
     /**
@@ -34,7 +34,7 @@ public class StringUtilities {
      * @return the first 3 characters of `input`
      */
     public static String getPrefix(String input){
-        return null;
+        return input.substring(0,3);
     }
 
     /**
@@ -42,7 +42,7 @@ public class StringUtilities {
      * @return the last 3 characters of `input`
      */
     public static String getSuffix(String input){
-        return null;
+        return input.substring(input.length() - 3);
     }
 
     /**
@@ -51,7 +51,7 @@ public class StringUtilities {
      * @return the equivalence of two strings, `inputValue` and `comparableValue`
      */
     public static Boolean compareTwoStrings(String inputValue, String comparableValue){
-        return null;
+        return inputValue.equals(comparableValue);
     }
 
     /**
@@ -59,7 +59,22 @@ public class StringUtilities {
      * @return the middle character of `inputValue`
      */
     public static Character getMiddleCharacter(String inputValue){
-        return null;
+
+
+        //length() method gets the total number of characters and calculates if it has any remainders
+        // if a number is divisible by 2 it is even otherwise it is odd
+        // In this particular code, if the amount of letters in the string is even (true),
+        // then it will execute the code in line 72, otherwise it will execute the code in line 77
+        if (inputValue.length() % 2 == 0) {
+
+            //this code returns character at a given index. The given index here is
+            // the total number of characters divided by 2 then subtracted by 1
+            return inputValue.charAt(inputValue.length() / 2 - 1);
+        }
+
+        //this code returns a character at the given index of the
+        // total number of characters divided by 2
+        return inputValue.charAt(inputValue.length() / 2);
     }
 
     /**
@@ -67,7 +82,8 @@ public class StringUtilities {
      * @return the first sequence of characters
      */
     public static String getFirstWord(String spaceDelimitedString){
-        return null;
+        String[] words = spaceDelimitedString.split(" ");
+        return words[0];
     }
 
     /**
@@ -75,7 +91,13 @@ public class StringUtilities {
      * @return the second word of a string delimited by spaces.
      */
     public static String getSecondWord(String spaceDelimitedString){
-        return null;
+
+        //Declared an array of strings named words and initialized a split() method
+        //the split(" ") method splits the words
+        String[] words = spaceDelimitedString.split(" ");
+
+        //then returned the array at the index of 1 which would be the second word because index always starts at 0
+        return words[1];
     }
 
     /**
@@ -83,6 +105,10 @@ public class StringUtilities {
      * @return an identical string with characters in reverse order.
      */
     public static String reverse(String stringToReverse){
-        return null;
+
+        StringBuilder str = new StringBuilder(stringToReverse);
+        StringBuilder reverseStr = str.reverse();
+
+        return reverseStr.toString();
     }
 }
